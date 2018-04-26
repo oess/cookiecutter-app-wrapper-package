@@ -1,0 +1,1 @@
+{"name": "{{cookiecutter.repo_name}}", "python_version": 3.5, "requirements": "orion-requirements.txt", "version": "{{cookiecutter.version}}"}
