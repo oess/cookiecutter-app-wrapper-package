@@ -9,7 +9,7 @@ Note that Floe requires Python 3.5
 
 # Setup
     pip install cookiecutter
-    cookiecutter ssh://git@git.eyesopen.com/nebulous/cookiecutter-orion-app-package.git
+    cookiecutter gh:oess/cookiecutter-app-wrapper-package
 
 
 Answer all the prompts that cookiecutter asks to generate a repository skeleton

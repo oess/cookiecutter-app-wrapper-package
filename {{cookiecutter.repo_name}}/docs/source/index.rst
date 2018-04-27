@@ -11,7 +11,6 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   floes/floes.rst
-   cubes/cubes.rst
+   app_api.rst
 
 *   :ref:`genindex`

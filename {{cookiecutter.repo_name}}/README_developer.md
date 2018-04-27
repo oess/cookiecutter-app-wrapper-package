@@ -4,7 +4,9 @@ to wrap an application.  The layout is as follows
   * README.md : Readme file intended for the users of this repository
   * README_developer.md : Readme file for the developer of this repository
   * {{cookiecutter.repo_name}}/ : Subdirectory where the executable files should be placed
+  * {{cookiecutter.repo_name}}/__init__.py : The file containing the python wrapper
   * tests/ : Subdirectory for unit tests
+  * docs/ : Subdirectory for documentation
   * setup.py : Python file that manages making this repository a python package
   * requirements.txt : Requirements file for developers of this repository
   * manifest.json : JSON file that manages making this a valid orion package
@@ -28,26 +30,22 @@ Example pip.conf
     [global]
     extra-index-url = https://magpie.eyesopen.com/simple/ 
 
-# Skeleton Cube and Floe
+# Skeleton application and wrapper
 
-When initially created from cookiecutter contains on implemented cube, floe and unit
-each as follows
+When initially created from cookiecutter the skeleton contains only a framework for the wrapper as follows
  
-  * {{cookiecutter.repo_name}}/my_cube.py : A cube that passes records to the success or failure port unchanged.
-  * tests/test_my_cube.py : A unit test for the cube.
-  * floes/my_floe.py : A Floe that uses the cube to read in records and write them out unchanged.
+  * {{cookiecutter.repo_name}}/__init__.py : A template for python code to expose your application as a function
+  * tests/test_myappapi.py : A template for a unit test for the wrapper function
+  * docs/source/app_api.rst : A template for the documentation of the python api point
 
-While these Floe, Cube and test are functional the intention is that the be modified,
-and that their current implementation be used as a template.
+The intention is that you will carry out each of these three tasks following the more detailed help that follows.
 
-# Adding more cubes
+  #. Put a Ubuntu 14 compatible version of your application into the {{cookiecutter.repo_name}} directory
 
-To add more cubes to this repository add another file with the new cube in the cubes\
-directory and then add the cube to the __init__.py file in the cubes\ directory.
+  #. Modify each of the associated template files to wrap, document, test and package your application
 
-To add a test for your new cube create a new python test in the tests directory,
-the name of which must begin with 'test_', that has the test for the cube.
- 
+  #. Build a pip package using ``invoke package`` and upload it to an Orion accessible pypi server
+
 # Running tests
 
 To run the cube unit test(s) run the following command from the root directory of this
@@ -79,17 +77,8 @@ be of the form "<major version number>.<minor version number>.<bugfixnumber>".
 
 # Adding requirements
 Once you've created the template if you have additional python package requirements
-for this repository add them to the requirements list variable in setup.py and to 
-orion_requirements.txt.
+for this repository add them to the requirements list variable in setup.py.
 
-## Example adding numpy library:
-
-orion_requirements.txt:
-
-    OpenEye-cuberecord
-    OpenEye-snowball>=0.10.5
-    numpy
-    
 setup.py requirements variable declaration
 
     requirements = ["OpenEye-cuberecord", "OpenEye-snowball>=0.10.5", "numpy"]

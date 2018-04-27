@@ -10,7 +10,7 @@ from openeye import oechem
 
 INSTALL_DIR = os.path.dirname(__file__)
 
-APP_NAME = 'my_application'
+APP_NAME = {{cookiecutter.executable_name}}
 MY_APPLICATION_CMD = os.path.join(INSTALL_DIR, APP_NAME)
 
 __version__ = "{{cookiecutter.version}}"
