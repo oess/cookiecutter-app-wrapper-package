@@ -11,7 +11,7 @@ from setuptools import convert_path
 
 @task
 def flake8(ctx):
-    run("flake8 --max-line-length 100 {{cookiecutter.module_name}}")
+    run("flake8 --max-line-length 100 {{cookiecutter.package_name}}")
 
 @task
 def update_manifest(ctx):
@@ -20,8 +20,8 @@ def update_manifest(ctx):
     """
     spec = loads(open('manifest.json', 'r').read())
     sys.path.append(os.path.dirname(__file__))
-    import {{cookiecutter.module_name}}
-    spec['version'] = {{cookiecutter.module_name}}.__version__
+    import {{cookiecutter.package_name}}
+    spec['version'] = {{cookiecutter.package_name}}.__version__
     dump(spec, open('manifest.json', 'w'))
 
 
@@ -57,8 +57,6 @@ def package(ctx):
 @task
 def docs(ctx):
     curdir = os.getcwd()
-    run('cube_doc {{cookiecutter.module_name}} docs/source')
-    run('floe_doc {{cookiecutter.module_name}} floes docs/source')
     os.chdir('docs')
     if sys.platform == 'win32':
         run("make.bat html")

@@ -21,12 +21,12 @@ from sys import argv, exit
 from json import dumps
 from setuptools import setup, find_packages, convert_path
 
-# Requirements for {{cookiecutter.module_name}}
+# Requirements for {{cookiecutter.package_name}}
 requirements = ["OpenEye-toolkits"]
 
 # Obtain version of cuberecord
 _version_re = compile(r'__version__\s+=\s+(.*)')
-version_file = convert_path("./{{cookiecutter.module_name}}/__init__.py")
+version_file = convert_path("./{{cookiecutter.package_name}}/__init__.py")
 with open(version_file, 'rb') as f:
     version = str(literal_eval(_version_re.search(f.read().decode('utf-8')).group(1)))
 

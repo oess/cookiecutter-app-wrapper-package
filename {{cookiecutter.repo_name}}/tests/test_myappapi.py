@@ -1,10 +1,10 @@
 from unittest import TestCase
-from {{cookiecutter.module_name}} import run_{{cookiecutter.executable_name}}
+from {{cookiecutter.package_name}} import run_{{cookiecutter.executable_name}}
 
 
 class ApplicationWrapperTest(TestCase):
 
-    def test_app_wrapper(self):
+    def test_{{cookiecutter.executable_name}}_wrapper(self):
         # define expected output
         expected_value = _what_you_expect_
 

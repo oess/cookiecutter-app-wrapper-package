@@ -3,7 +3,7 @@
     "full_name": "Jane Doe",
     "email": "myemail@mydomain.com",
     "repo_name": "my-orion-package",
-    "module_name": "my_package",
+    "package_name": "my_package",
     "description": "Description of my repository",
     "version": "0.1.0"
 }

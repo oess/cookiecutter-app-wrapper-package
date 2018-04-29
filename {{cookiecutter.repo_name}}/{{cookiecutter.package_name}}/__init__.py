@@ -10,7 +10,7 @@ from openeye import oechem
 
 INSTALL_DIR = os.path.dirname(__file__)
 
-APP_NAME = {{cookiecutter.executable_name}}
+APP_NAME = "{{cookiecutter.executable_name}}"
 MY_APPLICATION_CMD = os.path.join(INSTALL_DIR, APP_NAME)
 
 __version__ = "{{cookiecutter.version}}"
@@ -38,7 +38,7 @@ def write_molecule(mol):
     return tmp_input
 
 
-def run_my_application(ligand, protein, parameter_1=2.5, option_a=True, option_b=False):
+def run_{{cookiecutter.executable_name}}(ligand, protein, parameter_1=2.5, option_a=True, option_b=False):
 
     # setup input and output file
     tmp_ligand = write_molecule(ligand)
