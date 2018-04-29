@@ -39,7 +39,6 @@ setup(
     name='{{cookiecutter.repo_name}}',
     version=version,
     packages=find_packages(exclude=['tests/*', 'floes/*']),
-    url="{{cookiecutter.url}}",
     author='{{cookiecutter.full_name}}',
     author_email='{{cookiecutter.email}}',
     description='{{cookiecutter.description}}',
